@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visualiza Nuestro Tríptico</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+        }
+        header {
+            background: #333;
+            color: #fff;
+            padding: 1rem 0;
+            text-align: center;
+        }
+        form {
+            margin: 1rem 0;
+            padding: 1rem;
+            background: #fff;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        label {
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+        input[type="text"], input[type="submit"] {
+            width: 100%;
+            padding: 0.5rem;
+            margin-bottom: 1rem;
+        }
+        iframe {
+            width: 100%;
+            height: 600px;
+            border: none;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Visualiza Nuestro Tríptico</h1>
+    </header>
+
+    <div class="container">
+        <section>
+            <h2>Tríptico en PDF</h2>
+            <iframe src="https://drive.google.com/file/d/1f7TLdm462D_mg7zNnrXF7zSWSLmLBoN7/preview" allowfullscreen></iframe>
+        </section>
+
+        <section>
+            <h2>Registro de Visualización</h2>
+            <form id="registroForm">
+                <label for="nombrePadreMadre">Nombre del padre o madre:</label>
+                <input type="text" id="nombrePadreMadre" name="nombrePadreMadre" required>
+
+                <label for="nombreNinoNina">Nombre del niño o niña:</label>
+                <input type="text" id="nombreNinoNina" name="nombreNinoNina" required>
+
+                <input type="submit" value="Registrar Visualización">
+            </form>
+        </section>
+
+        <section>
+            <h2>Encuesta de Satisfacción</h2>
+            <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdy7MEVGDwtfzXSb0tbXs8Q9HOnZp_BOONqAvSqz8JrES9nIw/viewform?embedded=true" width="640" height="800" frameborder="0" marginheight="0" marginwidth="0">Cargando…</iframe>
+        </section>
+    </div>
+
+    <script>
+        // Manejo del envío del formulario de registro
+        document.getElementById('registroForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Evita el envío del formulario por defecto
+
+            const nombrePadreMadre = document.getElementById('nombrePadreMadre').value;
+            const nombreNinoNina = document.getElementById('nombreNinoNina').value;
+
+            // Aquí puedes enviar los datos a un servidor o almacenarlos en una base de datos
+            alert(`Gracias por registrar tu visualización, ${nombrePadreMadre}.`);
+
+            // Reinicia el formulario
+            this.reset();
+        });
+    </script>
+</body>
+</html>
+
+
